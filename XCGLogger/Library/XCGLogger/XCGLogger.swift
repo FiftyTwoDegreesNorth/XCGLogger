@@ -105,7 +105,7 @@ public class XCGConsoleLogDestination: XCGLogDestinationProtocol, CustomDebugStr
         }
         
         dispatch_async(XCGLogger.logQueue) {
-            print(fullLogMessage, appendNewline: false)
+            print(fullLogMessage, terminator: "")
         }
     }
 
@@ -123,7 +123,7 @@ public class XCGConsoleLogDestination: XCGLogDestinationProtocol, CustomDebugStr
         let fullLogMessage: String =  "\(formattedDate) \(extendedDetails): \(logDetails.logMessage)\n"
 
         dispatch_async(XCGLogger.logQueue) {
-            print(fullLogMessage, appendNewline: false)
+            print(fullLogMessage, terminator: "")
         }
     }
 
